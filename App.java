@@ -1,51 +1,41 @@
-// class polos atau tanpa constructor
-class Polos{
-    // atribut objek
-    String dataString;
-    int dataInteger;
+// Kalkulator dengan konstruktor
+class Kalkulator{
+    // Atribut kalkulator
+    double angka1;
+    double angka2;
+    double penjumlahan;
+    double pengurangan;
+    double perkalian;
+    double pembagian;
+
+    // Konstruktor untuk menginisialisasi angka-angka
+    Kalkulator(double inputAngka1, double inputAngka2) {
+       angka1 = inputAngka1;
+       angka2 = inputAngka2;
+       penjumlahan = angka1 + angka2;
+       pengurangan = angka1 - angka2;
+       perkalian   = angka1 * angka2;
+       pembagian   = angka1 / angka2;
+
+    // Menampilkan hasil dari berbagai operasi
+    System.out.println("    KALKULATOR    ");
+    System.out.println("------------------");
+    System.out.println(" Penjumlahan: " + penjumlahan);
+    System.out.println(" Pengurangan: " + pengurangan);
+    System.out.println(" Perkalian  : " + perkalian);
+
+    // NOTE jika bilangan ke dua nilainya 0, maka nilai pertama tidak bisa di bagi dengan bilangan ke dua
+    if (angka2 != 0) {
+    pembagian   = angka1 / angka2;
+    System.out.println(" Pembagian  : " + pembagian);
+       } else {
+           System.out.println("Nilai pertama tidak bisa di bagi dengan Nol");
+       }
+ }          
 }
-
-
-// class dengan constructor
-class Mahasiswa{
-    // atribut 
-    String nama;
-    String NIM;
-    String prodi;
-
-    //  constructor
-    // namanya sama dengan nama class
-    // tidak memiliki return value/nilai baik
-    // method yang pertama kali di panggil saat objek pertama kali di buat
-    Mahasiswa(String inputnama,String inputNIM, String inputProdi){
-        nama = inputnama;
-        NIM = inputNIM;
-        prodi = inputProdi;
-
-        System.out.println("nama Mahasiswa : " + nama);
-        System.out.println("NIM : " + NIM);
-        System.out.println("Prodi : " + prodi); 
-    }
-
-}
-
-public class App {   
-    public static void main(String[] args) throws Exception {
-        // pembuatan objek atau instansiasi objek
-        Polos polos_1 = new Polos();
-
-        // isi atribut 
-        polos_1.dataString = "polos";
-        polos_1.dataInteger = 10;
-
-        // cetak objek
-        System.out.println(polos_1.dataString);
-        System.out.println(polos_1.dataString);
-        
-        // pembuatan objek mahasiswa
-        Mahasiswa mhs_1 = new Mahasiswa("ardila","23241054","pti");
-        Mahasiswa mhs_2 = new Mahasiswa("ardika","23241087","pti");
-
-
-    }
+public class  App{
+   public static void main(String[] args) {
+       // Membuat objek kalkulator dengan nilai pertama dan nilai kedua
+       Kalkulator Kalkulator1 = new Kalkulator(20, 4);
+   }
 }
