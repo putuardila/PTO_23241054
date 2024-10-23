@@ -1,41 +1,52 @@
-// Kalkulator dengan konstruktor
-class Kalkulator{
-    // Atribut kalkulator
-    double angka1;
-    double angka2;
-    double penjumlahan;
-    double pengurangan;
-    double perkalian;
-    double pembagian;
-
-    // Konstruktor untuk menginisialisasi angka-angka
-    Kalkulator(double inputAngka1, double inputAngka2) {
-       angka1 = inputAngka1;
-       angka2 = inputAngka2;
-       penjumlahan = angka1 + angka2;
-       pengurangan = angka1 - angka2;
-       perkalian   = angka1 * angka2;
-       pembagian   = angka1 / angka2;
-
-    // Menampilkan hasil dari berbagai operasi
-    System.out.println("    KALKULATOR    ");
-    System.out.println("------------------");
-    System.out.println(" Penjumlahan: " + penjumlahan);
-    System.out.println(" Pengurangan: " + pengurangan);
-    System.out.println(" Perkalian  : " + perkalian);
-
-    // NOTE jika bilangan ke dua nilainya 0, maka nilai pertama tidak bisa di bagi dengan bilangan ke dua
-    if (angka2 != 0) {
-    pembagian   = angka1 / angka2;
-    System.out.println(" Pembagian  : " + pembagian);
-       } else {
-           System.out.println("Nilai pertama tidak bisa di bagi dengan Nol");
-       }
- }          
+// class polos tanpa constructor
+class Polos {
+    // atribut objec
+    String dataString;
+    int dataInterger;
 }
-public class  App{
-   public static void main(String[] args) {
-       // Membuat objek kalkulator dengan nilai pertama dan nilai kedua
-       Kalkulator Kalkulator1 = new Kalkulator(20, 4);
-   }
+
+// membuat dengan onstructor
+class Mahasiswa {
+    // atribut
+    String nama;
+    String NIM;
+    String prodi;
+    
+    // costructor
+    // tidak memiliki return value/ nilai balik
+    // method yang pertama kali dipanggil saat objec pertamakali
+    Mahasiswa(String inputNama, String inputNIM, String inputprodi) {
+        // mengisi data
+        nama = inputNama;
+        NIM = inputNIM;
+        prodi = inputprodi;
+
+        // menyetak data
+        System.out.println("=========================");
+        System.out.println("nama mahasiswa  : "+ nama);
+        System.out.println("NIM             : "+ NIM);
+        System.out.println("prodi           : "+ prodi);
+
+    }
+}
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        // pembuatan objek atau instansiasi objek
+        Polos polos_1 = new Polos();
+        Polos polos_2 = new Polos();
+
+        // isi atribut
+        polos_1.dataString = "polos";
+        polos_2.dataInterger = 10;
+
+        // cetak objek
+        System.out.println(polos_1.dataString);
+        System.out.println(polos_2.dataInterger);
+
+        // pembuatan objec mahasiswa
+        Mahasiswa mhs_1 = new Mahasiswa("dila", "23241054", "PTI");
+        Mahasiswa mhs_2 = new Mahasiswa("ardikka", "23241078", "kimia");
+        Mahasiswa mhs_3 = new Mahasiswa("jean", "23241045", "tambang");
+    }
 }
