@@ -1,52 +1,63 @@
-// class polos tanpa constructor
-class Polos {
-    // atribut objec
-    String dataString;
-    int dataInterger;
-}
-
-// membuat dengan onstructor
 class Mahasiswa {
-    // atribut
-    String nama;
+    //data member atau ciri 
+    String Nama;
     String NIM;
-    String prodi;
+
+    // construktor
+    Mahasiswa(String Nama, String NIM) {
+        this.Nama = Nama;
+        this.NIM = NIM;
+
+    }
     
-    // costructor
-    // tidak memiliki return value/ nilai balik
-    // method yang pertama kali dipanggil saat objec pertamakali
-    Mahasiswa(String inputNama, String inputNIM, String inputprodi) {
-        // mengisi data
-        nama = inputNama;
-        NIM = inputNIM;
-        prodi = inputprodi;
+    // method tampa return dan tanpa parameter
+    void cetak(){
+        System.out.println("Nama : " + this.Nama);
+        System.out.println("NIM : " + this.NIM);
+    }
 
-        // menyetak data
-        System.out.println("=========================");
-        System.out.println("nama mahasiswa  : "+ nama);
-        System.out.println("NIM             : "+ NIM);
-        System.out.println("prodi           : "+ prodi);
+    // method dengan parameter dan tanpa return 
+    void setNama(String Nama){
+        this.Nama = Nama;
+    }
 
+    // method dengan return dan tanpa parameter 
+    String getNama(){
+        return this.Nama;
+    }
+
+    String getNIM(){
+        return this.NIM;
+    }
+
+    // method dengan parameter dan return 
+    String sayHi(String pesan){
+        return "Hi.." + this.Nama + pesan;
     }
 }
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        // pembuatan objek atau instansiasi objek
-        Polos polos_1 = new Polos();
-        Polos polos_2 = new Polos();
+ public static void main(String[] args) throws Exception {
 
-        // isi atribut
-        polos_1.dataString = "polos";
-        polos_2.dataInterger = 10;
+    // MEMBUAT OBJEK
+    Mahasiswa mhs_1 = new Mahasiswa("LY", "23241048");
 
-        // cetak objek
-        System.out.println(polos_1.dataString);
-        System.out.println(polos_2.dataInterger);
+    // memanggil method dengan parameter dan return 
+    mhs_1.cetak();
 
-        // pembuatan objec mahasiswa
-        Mahasiswa mhs_1 = new Mahasiswa("dila", "23241054", "PTI");
-        Mahasiswa mhs_2 = new Mahasiswa("ardikka", "23241078", "kimia");
-        Mahasiswa mhs_3 = new Mahasiswa("jean", "23241045", "tambang");
-    }
+
+    // memanggil method dengan parameter tanpa return
+    mhs_1.setNama("LY");
+    mhs_1.cetak();
+                                    
+    System.out.println(mhs_1.getNama());
+    System.out.println(mhs_1.getNIM());
+
+    
+    // memanggil method dengan parameter dan return 
+    String pesan = mhs_1.sayHi("sukses belajar oop");
+    System.out.println(pesan);
+
+
+ }
 }
